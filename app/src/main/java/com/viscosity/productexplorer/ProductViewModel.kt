@@ -14,9 +14,9 @@ data class ProductUiState(
     val errorMessage: String? = null
 )
 
-class ProductViewModel : ViewModel() {
-
-    private val repository = ProductRepository()
+class ProductViewModel(
+    private val repository: ProductRepository = ProductRepository()
+) : ViewModel() {
 
     private val pageSize = 10
     private var currentSkip = 0

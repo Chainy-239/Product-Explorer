@@ -13,9 +13,9 @@ data class ProductDetailUiState(
     val errorMessage: String? = null
 )
 
-class ProductDetailViewModel : ViewModel() {
-
-    private val repository = ProductRepository()
+class ProductDetailViewModel(
+    private val repository: ProductRepository = ProductRepository()
+) : ViewModel() {
 
     var uiState by mutableStateOf(ProductDetailUiState())
         private set
